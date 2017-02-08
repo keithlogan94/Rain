@@ -1,20 +1,13 @@
-#include <SDL.h>
 #include <iostream>
 #include <stdexcept>
 #include <string>
+#include <memory>
 
 int main(int argc, char ** argv) 
 {
 	try
 	{
-		if (SDL_Init(SDL_INIT_VIDEO) != 0) {
-			std::string errLog;
-			errLog.append(SDL_GetError());
-			errLog.append(" : error with initializing: SDL_Init() : in Main.cpp");
-			throw std::logic_error{errLog.c_str()};
-		}
-		//continue...
-
+	//continue...
 
 
 	}
@@ -24,7 +17,6 @@ int main(int argc, char ** argv)
 		system("pause");
 		return 1;
 	}
-	SDL_Quit();
 	return 0;
 }
 
