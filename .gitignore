@@ -1,0 +1,7 @@
+*.filters
+*.user
+*.db
+*.vs
+glm
+sdl2
+Debug
