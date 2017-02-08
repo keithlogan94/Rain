@@ -1,7 +1,10 @@
 #pragma once
 #include <SDL.h>
+#include <SDL_image.h>
 #include <string>
 #include <stdexcept>
+#include "Entity.h"
+#include "EntityLoader.h"
 class Window
 {
 	SDL_Window *win{ nullptr };
@@ -10,9 +13,17 @@ class Window
 	Uint32 mouseState;
 	int mouseX;
 	int mouseY;
+	int width, height;
 	bool windowShouldClose();
 	SDL_Event event;
 	SDL_Surface *windowSurface;
+	//test
+	Entity *entity;
+
+	struct Time {
+		Uint32 prevTime = 0;
+		float deltaTime = 0.0f;
+	} time;
 public:
 	Window();
 	~Window();
@@ -20,5 +31,6 @@ public:
 private:
 	void updateWindowState();
 	void draw();
+	void handleInput();
 };
 
