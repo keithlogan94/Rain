@@ -1,14 +1,17 @@
 #include <iostream>
+#include <fstream>
 #include <stdexcept>
 #include <string>
 #include <memory>
 #include "Window.h"
+#include "EntityLoader.h"
+#include "OperatorOverloads.h"
 
 int main(int argc, char ** argv) 
 {
 	try
 	{
-	//continue...
+		//continue...
 		Window win;
 		win.loop();
 	}

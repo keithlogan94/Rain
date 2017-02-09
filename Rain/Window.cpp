@@ -19,7 +19,7 @@ Window::Window()
 		throw std::runtime_error{ "error window or renderer was not created successfully : "
 			"SDL_CreateWindowAndRenderer(...) : Window.cpp" };
 	}
-	windowSurface = SDL_GetWindowSurface(win);
+	//winSurface = SDL_GetWindowSurface(win.get());
 	mouseX = 0;
 	mouseY = 0;
 }
