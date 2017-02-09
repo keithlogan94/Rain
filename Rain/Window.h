@@ -2,21 +2,34 @@
 #include <SDL.h>
 #include <string>
 #include <stdexcept>
-class Window
+#include <iostream>
+#include "ClickedBroadcaster.h"
+#include "EventBroadcaster.h"
+#include "HoverBroadcaster.h"
+#include "ClickedObserver.h"
+#include "EventObserver.h"
+#include "HoverObserver.h"
+#include "EntityLoader.h"
+class Window : public ClickObserver, public HoverObserver, public EventObserver
 {
 	SDL_Window *win{ nullptr };
 	SDL_Renderer *ren{ nullptr };
-	const Uint8*keyboardState;
-	Uint32 mouseState;
-	int mouseX;
-	int mouseY;
 	bool windowShouldClose();
-	SDL_Event event;
 	SDL_Surface *windowSurface;
+	bool windowClose = false;
+	ClickBroadcaster *clicks;
+	EventBroadcaster *events;
+	HoverBroadcaster *hovering;
 public:
-	Window();
+	Window(Entity);
 	~Window();
 	void loop();
+
+	void leftClick(const int x, const int y);
+	void rightClick(const int x, const int y);
+	void hover(const int mouseX, const int mouseY);
+	void sendEvent(int sentEvent);
+
 private:
 	void updateWindowState();
 	void draw();

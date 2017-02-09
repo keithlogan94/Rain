@@ -2,7 +2,7 @@
 
 
 
-Window::Window()
+Window::Window(ClickBroadcaster *clicks, EventBroadcaster *events, HoverBroadcaster *hovering)
 {
 	if (SDL_Init(SDL_INIT_VIDEO) != 0) {
 		std::string errLog;
@@ -20,8 +20,6 @@ Window::Window()
 			"SDL_CreateWindowAndRenderer(...) : Window.cpp" };
 	}
 	windowSurface = SDL_GetWindowSurface(win);
-	mouseX = 0;
-	mouseY = 0;
 }
 
 
@@ -42,12 +40,32 @@ void Window::loop()
 	} while (!windowShouldClose());
 }
 
+void Window::leftClick(const int x, const int y)
+{
+	std::cout << "leftclick : " << x << " " << y << "\n";
+}
+
+void Window::rightClick(const int x, const int y)
+{
+	std::cout << "rightclick : " << x << " " << y << "\n";
+}
+
+void Window::hover(const int mouseX, const int mouseY)
+{
+	std::cout << "hover : " << mouseX << " " << mouseY << "\n";
+}
+
+void Window::sendEvent(int sentEvent)
+{
+	if (sentEvent == SDL_QUIT) windowClose = true;
+}
+
 
 void Window::updateWindowState()
 {
-	mouseState = SDL_GetMouseState(&mouseX, &mouseY);
-	keyboardState = SDL_GetKeyboardState(0);
-	SDL_PollEvent(&event);
+	clicks->update();
+	events->update();
+	hovering->update();
 }
 
 
@@ -63,7 +81,5 @@ void Window::draw()
 
 bool Window::windowShouldClose()
 {
-	if (keyboardState == nullptr) throw std::runtime_error{ "error keyboardState is nullptr : "
-		"windowShouldClose() : Window.cpp" };
-	return keyboardState[SDL_SCANCODE_ESCAPE] || event.type == SDL_QUIT;
+	return windowClose;
 }

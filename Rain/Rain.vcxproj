@@ -116,14 +116,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Broadcaster.cpp" />
+    <ClCompile Include="ClickedBroadcaster.cpp" />
+    <ClCompile Include="ClickedObserver.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="EventBroadcaster.cpp" />
+    <ClCompile Include="EventObserver.cpp" />
+    <ClCompile Include="HoverBroadcaster.cpp" />
+    <ClCompile Include="HoverObserver.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Observer.cpp" />
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Broadcaster.h" />
+    <ClInclude Include="ClickedBroadcaster.h" />
+    <ClInclude Include="ClickedObserver.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityLoader.h" />
+    <ClInclude Include="EventBroadcaster.h" />
+    <ClInclude Include="EventObserver.h" />
+    <ClInclude Include="HoverBroadcaster.h" />
+    <ClInclude Include="HoverObserver.h" />
+    <ClInclude Include="Observer.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

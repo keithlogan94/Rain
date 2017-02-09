@@ -2,9 +2,8 @@
 
 
 
-Entity::Entity()
+Entity::Entity(const EntityLoader& loader)
 {
-
 }
 
 

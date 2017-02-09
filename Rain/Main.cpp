@@ -3,6 +3,9 @@
 #include <string>
 #include <memory>
 #include "Window.h"
+#include "ClickedObserver.h"
+#include "ClickedBroadcaster.h"
+
 
 int main(int argc, char ** argv) 
 {
@@ -11,6 +14,9 @@ int main(int argc, char ** argv)
 	//continue...
 		Window win;
 		win.loop();
+
+
+
 	}
 	catch (const std::logic_error& e)
 	{

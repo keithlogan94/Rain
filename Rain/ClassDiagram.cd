@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="class Movement public : Entity&#xD;&#xA;virtual&#xD;&#xA;-Animation walk&#xD;&#xA;-Animation jump&#xD;&#xA;-Animation lost&#xD;&#xA;-Animation hit&#xD;&#xA;-Animation idle&#xD;&#xA;-Animation attack1&#xD;&#xA;-Animation attack2&#xD;&#xA;-Animation idle2&#xD;&#xA;&#xD;&#xA;update()&#xD;&#xA;draw()">
+    <Position X="8.667" Y="3.906" Height="2.417" Width="1.742" />
+  </Comment>
+  <Comment CommentText="class Object : public Entity&#xD;&#xA;-Movement">
+    <Position X="0.5" Y="2.01" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="class Player : public Entity&#xD;&#xA;-Movement">
+    <Position X="2.531" Y="2.031" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="class Enemy : public Entity&#xD;&#xA;-Movement&#xD;&#xA;">
+    <Position X="6.604" Y="2.021" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="class Scene : public Entity&#xD;&#xA;-Movement&#xD;&#xA;">
+    <Position X="4.583" Y="1.99" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="class ObjectMovement : public Movement&#xD;&#xA;">
+    <Position X="6.625" Y="6.365" Height="1.771" Width="1.7" />
+  </Comment>
+  <Comment CommentText="class PlayerMovement : public Movement&#xD;&#xA;-Animation">
+    <Position X="8.677" Y="6.698" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="class EnemyMovement : public Movement&#xD;&#xA;-Animation">
+    <Position X="10.927" Y="6.552" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="class Scene">
+    <Position X="10.615" Y="1.344" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="struct EntityLoader&#xD;&#xA;-ClickedBroadcaster&#xD;&#xA;-HoverBroadcaster&#xD;&#xA;-SDL_Renderer&#xD;&#xA;-SDL_Rect">
+    <Position X="4.125" Y="0.5" Height="0.927" Width="1.721" />
+  </Comment>
+  <Comment CommentText="class Animation&#xD;&#xA;virtual&#xD;&#xA;&#xD;&#xA;draw()&#xD;&#xA;update()&#xD;&#xA;">
+    <Position X="2.063" Y="4.354" Height="0.948" Width="1.679" />
+  </Comment>
+  <Comment CommentText="class PlayerAnimation : public Animation&#xD;&#xA;-vector&lt;textures&gt;">
+    <Position X="0.5" Y="5.542" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="class EnemyAnimation : public Animation">
+    <Position X="2.438" Y="5.573" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="class ObjectAnimation : public Animation&#xD;&#xA;vector&lt;textures&gt;">
+    <Position X="4.323" Y="5.583" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="class ClickedBroadcaster&#xD;&#xA;-vector&lt;Rects&gt;">
+    <Position X="0.958" Y="8.615" Height="0.802" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Observer&#xD;&#xA;-int position&#xD;&#xA;-BroadCaster&#xD;&#xA;setPosition()">
+    <Position X="3.177" Y="7.198" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="class ClickedObserver : public Observer&#xD;&#xA;-ClickedBroadcaster&#xD;&#xA;virtual clicked() = 0">
+    <Position X="3.25" Y="8.562" Height="0.781" Width="1.7" />
+  </Comment>
+  <Comment CommentText="class BroadCaster&#xD;&#xA;-vector&lt;Observers&gt;&#xD;&#xA;addToObservers()">
+    <Position X="1.083" Y="7.198" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="class HoverBroadCaster : public BoradCaster&#xD;&#xA;-vector &lt;Rects&gt;">
+    <Position X="0.958" Y="9.76" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="class HoverObserver : public Observer&#xD;&#xA;-HoverBroadCaster&#xD;&#xA;virtual hover() = 0">
+    <Position X="3.292" Y="9.802" Height="0.729" Width="1.7" />
+  </Comment>
+  <Comment CommentText="class Window&#xD;&#xA;-ClickedBroadcaster&#xD;&#xA;-HoverBroadcaster">
+    <Position X="9.177" Y="0.5" Height="0.865" Width="1.7" />
+  </Comment>
+  <Class Name="Entity" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAIAAAAAACAAAAAAAAAgAAAEAAA=</HashCode>
+      <FileName>Entity.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Window" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAASAEAAAIAAMAAAQAAAAIAAAAACAAACAA=</HashCode>
+      <FileName>Window.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
