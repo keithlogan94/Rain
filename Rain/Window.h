@@ -3,6 +3,8 @@
 #include <string>
 #include <stdexcept>
 #include <memory>
+#include "Player.h"
+#include "EntityLoader.h"
 class Window
 {
 	SDL_Window *win;
@@ -14,6 +16,8 @@ class Window
 	bool windowShouldClose();
 	SDL_Event event;
 	SDL_Surface *winSurface;
+	Player * p;
+	EntityLoader loader;
 public:
 	Window();
 	~Window();

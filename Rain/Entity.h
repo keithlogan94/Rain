@@ -10,13 +10,13 @@ class EntityLoader;
 
 class Entity
 {
+protected:
 	glm::vec2 position;
 	struct Size { int w = 0, h = 0; } size;
 	short drawPriority = 1;
 	SDL_Renderer *ren = nullptr;
 public:
 	Entity(EntityLoader entity);
-	Entity(const EntityLoader& entity) = delete;
 	Entity(const EntityLoader&& entity) = delete;
 	Entity& operator=(const Entity& entity) = delete;
 	Entity& operator=(Entity&& entity) = delete;

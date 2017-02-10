@@ -22,11 +22,22 @@ Window::Window()
 	//winSurface = SDL_GetWindowSurface(win.get());
 	mouseX = 0;
 	mouseY = 0;
+
+	loader.drawPriority = 1;
+	loader.entityName = "Player1";
+	loader.width = 200;
+	loader.height = 200;
+	loader.ren = ren;
+	loader.startingPositon.x = 200;
+	loader.startingPositon.y = 200;
+
+	p = new Player{ loader };
 }
 
 
 Window::~Window()
 {
+	delete p;
 	SDL_DestroyRenderer(ren);
 	SDL_DestroyWindow(win);
 	SDL_Quit();
@@ -56,8 +67,11 @@ void Window::draw()
 {
 	if (!win || !ren)throw std::runtime_error{"error window or renderer is "
 		"nullptr somthing went wrong in : draw() : Window.cpp"};
-	SDL_UpdateWindowSurface(win);
-
+	//SDL_UpdateWindowSurface(win);
+	SDL_RenderClear(ren);
+	p->draw();
+	p->update();
+	SDL_RenderPresent(ren);
 }
 
 
