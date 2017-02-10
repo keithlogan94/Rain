@@ -11,7 +11,7 @@ Window::Window()
 		throw std::runtime_error{ errLog.c_str() };
 	}
 	SDL_CreateWindowAndRenderer(1080, 680, SDL_WINDOW_RESIZABLE, &win, &ren);
-	SDL_SetWindowTitle(win, "2D Game");
+	SDL_SetWindowTitle(win, "ArcherZomb 3");
 	if (!win || !ren) {
 		if (win)SDL_DestroyWindow(win);
 		else if (ren)SDL_DestroyRenderer(ren);

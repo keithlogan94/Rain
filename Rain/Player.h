@@ -9,11 +9,14 @@
 class Player :
 	public Entity
 {
+	bool left = false;
+	int hits = 0;
+	bool frameStop = false;
 	SDL_Event event;
 	const Uint8* keyBoardState{ nullptr };
 	Uint32 mouseState = 0;
 	int mouseX = 0, mouseY = 0;
-	int msPerFrame{ 80 };
+	int msPerFrame{ 45 };
 	int currentFrameIndex{ 0 };
 	Uint32 prevTime = 0;
 	struct Animations {
