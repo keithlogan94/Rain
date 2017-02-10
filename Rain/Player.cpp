@@ -234,6 +234,11 @@ void Player::setAnimation()
 		animations.currentAnimation = &animations.walk;
 		left = false;
 	}
+	if (animations.currentAnimation == &animations.walk &&
+		!keyBoardState[SDL_SCANCODE_A] && !keyBoardState[SDL_SCANCODE_D]) {
+		animations.currentAnimation = &animations.idle1;
+		currentFrameIndex = 0;
+	}
 	if (keyBoardState[SDL_SCANCODE_D] &&
 		animations.currentAnimation != &animations.jump &&
 		animations.currentAnimation != &animations.hit &&

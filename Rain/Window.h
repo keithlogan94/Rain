@@ -18,6 +18,8 @@ class Window
 	SDL_Surface *winSurface;
 	Player * p;
 	EntityLoader loader;
+	SDL_Texture *background;
+	int height, width;
 public:
 	Window();
 	~Window();
@@ -25,5 +27,6 @@ public:
 private:
 	void updateWindowState();
 	void draw();
+	SDL_Texture* loadTexture(const char *imagePath);
 };
 

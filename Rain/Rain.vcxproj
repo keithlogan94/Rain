@@ -120,6 +120,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SaveInterface.cpp" />
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -128,6 +129,7 @@
     <ClInclude Include="OperatorOverloads.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="SaveInterface.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
