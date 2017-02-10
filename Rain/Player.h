@@ -5,6 +5,7 @@
 #include <SDL_image.h>
 #include "Entity.h"
 
+
 class Player :
 	public Entity
 {

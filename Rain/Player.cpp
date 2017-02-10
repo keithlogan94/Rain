@@ -125,14 +125,39 @@ void Player::update()
 
 void Player::setAnimation()
 {
+
+	if (mouseState & SDL_BUTTON(SDL_BUTTON_LEFT) &&
+		animations.currentAnimation != &animations.attack1 &&
+		animations.currentAnimation != &animations.attack2) {
+		currentFrameIndex = 0;
+		animations.currentAnimation = &animations.attack1;
+	}
 	if (keyBoardState[SDL_SCANCODE_J] && 
 		animations.currentAnimation != &animations.jump) {
 		currentFrameIndex = 0;
 		animations.currentAnimation = &animations.jump;
 	}
 	if (keyBoardState[SDL_SCANCODE_A] &&
-		//animations.currentAnimation != )
-	if (currentFrameIndex == animations.currentAnimation->size()) {
+		animations.currentAnimation != &animations.jump &&
+		animations.currentAnimation != &animations.hit &&
+		animations.currentAnimation != &animations.noHealth &&
+		animations.currentAnimation != &animations.attack1 &&
+		animations.currentAnimation != &animations.attack2 &&
+		animations.currentAnimation != &animations.walk) {
+		currentFrameIndex = 0;
+		animations.currentAnimation = &animations.walk;
+	}
+	else if (keyBoardState[SDL_SCANCODE_D] &&
+		animations.currentAnimation != &animations.jump &&
+		animations.currentAnimation != &animations.hit &&
+		animations.currentAnimation != &animations.noHealth &&
+		animations.currentAnimation != &animations.attack1 &&
+		animations.currentAnimation != &animations.attack2 &&
+		animations.currentAnimation != &animations.walk) {
+		currentFrameIndex = 0;
+		animations.currentAnimation = &animations.walk;
+	}
+	if (currentFrameIndex == animations.currentAnimation->size()-1) {
 		currentFrameIndex = 0;
 		animations.currentAnimation = &animations.idle1;
 	}
